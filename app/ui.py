@@ -67,7 +67,7 @@ def orders_page(tenant: str | None = Cookie(default=None),
         f'<span data-testid="order-total">${o.total:.2f}</span> — shipping '
         f'<span data-testid="order-shipping">{"free" if o.shipping == 0 else f"${o.shipping:.2f}"}</span> '
         f'<span data-testid="order-status">{"shipped" if o.shipped else "pending"}</span> '
-        f'<button data-testid="ship-button" onclick="ship({i}+1)">Ship</button>'
+        f'<button data-testid="ship-button" onclick="ship({i})">Ship</button>'
         f'</li>'
         for i, o in enumerate(t.orders)
     ) or '<li data-testid="empty-state">No orders yet.</li>'
