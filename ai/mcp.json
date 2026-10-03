@@ -1,0 +1,9 @@
+{
+  "$comment": "Point an AI agent at the running app so it can explore and draft scenarios. Claude Code: copy into .mcp.json. Cursor/Windsurf: into their MCP settings.",
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest", "--browser=chromium", "--isolated"]
+    }
+  }
+}
