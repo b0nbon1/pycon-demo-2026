@@ -14,7 +14,7 @@ from app.domain import tenant_of
 UI_VARIANT = os.getenv("UI_VARIANT", "v1")
 SIGN_IN_LABEL = "Sign in" if UI_VARIANT == "v1" else "Log in"
 LIST_CLASS = "order-list" if UI_VARIANT == "v1" else "orders-table"
-LIST_TESTID = ' data-testid="order-list"' if UI_VARIANT == "v1" else ""
+LIST_TESTID = '' if UI_VARIANT == "v1" else ""
 # v2 also drops the login button's test-id — the usual casualty of a refactor.
 SUBMIT_TESTID = ' data-testid="login-submit"' if UI_VARIANT == "v1" else ""
 
@@ -63,7 +63,7 @@ def orders_page(tenant: str | None = Cookie(default=None),
     t = tenant_of(None, tenant)
     items = "".join(
         f'<li data-testid="order-item">'
-        f'<strong data-testid="order-customer">{o.customer}</strong> '
+        f'<strong data-testid="customer-name">{o.customer}</strong> '
         f'<span data-testid="order-total">${o.total:.2f}</span> — shipping '
         f'<span data-testid="order-shipping">{"free" if o.shipping == 0 else f"${o.shipping:.2f}"}</span> '
         f'<span data-testid="order-status">{"shipped" if o.shipped else "pending"}</span> '
