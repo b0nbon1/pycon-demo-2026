@@ -11,7 +11,7 @@ from fastapi import HTTPException
 
 PASSWORD = "correct-horse"
 
-FREE_SHIPPING_FROM = 100.00
+FREE_SHIPPING_FROM = 50.00
 SHIPPING_FEE = 4.99
 
 
